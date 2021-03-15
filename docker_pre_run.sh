@@ -11,10 +11,10 @@
 # ./docker_pre_run.sh
 ################################################################################
 
-echo "Create the nginx configuration from the template"
+# Create the nginx configuration from the template
 read -p "Enter the name/IP of nginx host (for reverse proxy): " NAME
 sed -e s/NGINX_SERVER_NAME/"${NAME}"/ nginx/app.conf_template > nginx/app.conf
 
-echo "Create the grafana configuration from the template"
-read -p "Enter the name/IP of nginx host (for reverse proxy): " NAME
+# Create the grafana configuration from the template
+read -p "Enter the name/IP of grafana host (for reverse proxy): " NAME
 sed -e s/NGINX_SERVER_NAME/"${NAME}"/ nginx/app.conf_template > nginx/app.conf
